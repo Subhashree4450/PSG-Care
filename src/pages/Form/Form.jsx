@@ -33,7 +33,7 @@ const Form = () => {
   };
 
   const handleSubmit = (e) => {
-    axios.post("http://localhost:5000/api/form", formData)
+    axios.post("https://psg-care-backend.onrender.com/api/form", formData)
       .then(res => {
         alert(res.data.message);
         // Reset form
