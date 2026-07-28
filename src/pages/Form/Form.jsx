@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
-import psgLogo from "../../assets/psg-logo.png";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import CustomDateTimePicker from "../../components/CustomDateTimePicker/CustomDateTimePicker";
 import "./Form.css";
@@ -98,7 +97,7 @@ const Form = () => {
     { value: "B.E. CSE (G2)", label: "B.E. CSE (G2)" },
     { value: "B.E. CSE (AI & ML)", label: "B.E. CSE (AI & ML)" },
     { value: "M.E. CSE", label: "M.E. CSE" },
-    { value: "Ph.D. CSE", label: "Ph.D. CSE" },
+    { value: "Ph.D.", label: "Ph.D." },
   ];
 
   const purposeOptions = [
@@ -114,7 +113,7 @@ const Form = () => {
       <Toaster />
       <div className="form-card">
         <div className="form-header">
-          <img src={psgLogo} alt="PSG Centenary Logo" className="form-logo-img" />
+          <img src="/psg-logo.png" alt="PSG Centenary Logo" className="form-logo-img" />
           <h2 className="form-title">PSGCares Lab Entry Register</h2>
           <p className="form-subtitle">Please enter your details to register entry</p>
         </div>
