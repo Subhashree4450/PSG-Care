@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import DateTimePickerModal from "../DateTimePickerModal/DateTimePickerModal";
 
+const CalendarWeekIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+    <path d="M8 14h.01M12 14h.01M16 14h.01"/>
+  </svg>
+);
+
 const CustomDateTimePicker = ({ label, value, onChange, required }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pickerRef = useRef(null);
@@ -42,7 +52,9 @@ const CustomDateTimePicker = ({ label, value, onChange, required }) => {
         onClick={() => setIsOpen(!isOpen)}
         tabIndex={0}
       >
-        <span className="picker-icon">📅</span>
+        <span className="picker-icon">
+          <CalendarWeekIcon />
+        </span>
         <span>{formatDisplay(value)}</span>
       </div>
 

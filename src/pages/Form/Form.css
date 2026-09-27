@@ -224,7 +224,10 @@
 }
 
 .picker-icon {
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
 }
 
 /* Pop UP modal above field to prevent scrolling */

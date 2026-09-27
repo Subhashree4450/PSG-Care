@@ -45,8 +45,7 @@ const DateTimePickerModal = ({ value, onApply, onClose }) => {
   }, [value]);
 
   const handleFetchCurrentTime = () => {
-    const now = new Date();
-    setStatesFromDate(now);
+    setStatesFromDate(new Date());
   };
 
   const handleConfirm = () => {

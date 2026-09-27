@@ -51,6 +51,22 @@ const Form = () => {
       return;
     }
 
+    const inDate = new Date(formData.inTime);
+    const outDate = new Date(formData.outTime);
+
+    if (isNaN(inDate.getTime()) || isNaN(outDate.getTime())) {
+      toast.error("Invalid In-Time or Out-Time format.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const minOutDate = new Date(inDate.getTime() + 60 * 1000);
+    if (outDate < minOutDate) {
+      toast.error("Out-Time must be greater than In-Time.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const finalPurpose = formData.purpose === "Others" 
       ? `Others: ${formData.otherPurpose.trim()}` 
       : formData.purpose;
